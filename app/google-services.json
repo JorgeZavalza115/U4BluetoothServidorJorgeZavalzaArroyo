@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912214819962",
+    "project_id": "u4proyectobluetoothasistencia",
+    "storage_bucket": "u4proyectobluetoothasistencia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912214819962:android:d28b89afb9df7af763e7c3",
+        "android_client_info": {
+          "package_name": "mx.edu.ittepic.ladm_u4_proyectobluetooth_jorgezavalzaarroyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912214819962-qcjm3v83t5cmdvjdharkpa9grqa5f21f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhHPlYRQRKm9IQI_lxln46N-3Ol4jzGH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912214819962-qcjm3v83t5cmdvjdharkpa9grqa5f21f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
