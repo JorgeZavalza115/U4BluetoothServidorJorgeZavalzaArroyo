@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     var arreglo= ArrayList<String>()
     var asistencia : String = ""
     lateinit var baseRemota : FirebaseFirestore
+    var res1 : String = ""
+    var res2 : String = ""
 
     init {
         hoy = formato.format(Date())
@@ -115,6 +117,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.listaHoy.setOnClickListener {
             val texto = generarLista()
+            texto.replace("+",res1)
+            texto.replace("_",res2)
+
             val archivo = OutputStreamWriter( openFileOutput("ListaAsistencia.txt", MODE_PRIVATE ))
             archivo.write( texto )
             archivo.flush()
@@ -172,11 +177,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun generarLista() : String {
         var cad = " -- ${hoy} -- \n - Horario: 11:00 - 12:00 - \n"
+
         FirebaseFirestore.getInstance().collection("Horario: 11:00 - 12:00").document(hoy)
             .get()
             .addOnSuccessListener {
-                var res = it.getString("NoControl") as String
-                cad += res
+                cad += it.get("NoControl").toString()
+
             }
             .addOnFailureListener {
                 AlertDialog.Builder(this)
@@ -189,8 +195,7 @@ class MainActivity : AppCompatActivity() {
             FirebaseFirestore.getInstance().collection("Horario: 11:00 - 12:00").document(hoy)
                 .get()
                 .addOnSuccessListener {
-                    var res = it.getString("NoControl") as String
-                    cad += res
+                    cad += it.get("NoControl").toString()
                 }
                 .addOnFailureListener {
                     AlertDialog.Builder(this)
